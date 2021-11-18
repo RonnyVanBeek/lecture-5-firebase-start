@@ -1,0 +1,6 @@
+{
+	"appId": "be.thomasmore.graduaten.chat",
+	"appName": "Les 5 Chat",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

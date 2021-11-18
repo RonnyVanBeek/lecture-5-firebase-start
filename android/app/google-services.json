@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "466304700476",
+    "project_id": "les-5-907e2",
+    "storage_bucket": "les-5-907e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466304700476:android:042e5e3b487d0cf14b3339",
+        "android_client_info": {
+          "package_name": "be.thomasmore.graduaten.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466304700476-t0ombnkk0mtoovuijtp1bdojr6g1tdg3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "be.thomasmore.graduaten.chat",
+            "certificate_hash": "a1966e341dfd26db0b53723d3c14f0043b183dca"
+          }
+        },
+        {
+          "client_id": "466304700476-4emri19ieh45rkka2orcioq6mm49pero.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTrjYkkcGwXyd0szqMoeAjsE-Tp6Ph2gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466304700476-4emri19ieh45rkka2orcioq6mm49pero.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

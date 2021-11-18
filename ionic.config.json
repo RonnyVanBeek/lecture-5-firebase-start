@@ -1,0 +1,7 @@
+{
+  "name": "l52",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,22 @@
+<div *ngIf="skeleton" [class]="'message ion-margin-horizontal ion-margin-top' + (floatLeft ? ' ion-float-left' : ' ion-float-right')">
+    <div>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+    </div>
+    <div>
+        <ion-skeleton-text animated> </ion-skeleton-text>
+    </div>
+</div>
+
+<div *ngIf="!skeleton" [class]="'message ion-margin' + (floatLeft ? ' ion-float-left' : ' ion-float-right')">
+    <div>
+        <ion-text class="ion-text-wrap">{{message.content}}</ion-text>
+    </div>
+    <div>
+        <ion-note>{{message.displayName}}</ion-note>
+    </div>
+</div>
+
+
+
