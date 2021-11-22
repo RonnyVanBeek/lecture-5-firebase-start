@@ -18,6 +18,15 @@
             <div (click)="authService.signOut()">Logout</div>
           </ion-item>
         </ion-list>
+        <ion-label>Channels</ion-label>
+          <ion-list *ngFor="let c of channels">
+            <ion-item (click)="router.navigate(['channel',c.name],{relativeTo: activatedRoute})">{{c.name}}</ion-item>
+          </ion-list>
+        <ion-label>Options</ion-label>
+        <ion-list>
+          <ion-label>New channel</ion-label>
+        </ion-list>
+
       </ion-content>
 
     </ion-menu>

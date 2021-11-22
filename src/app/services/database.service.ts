@@ -9,6 +9,7 @@ import {
   doc, DocumentReference, deleteDoc,
   query, getDoc, getDocs, updateDoc, orderBy, where, onSnapshot
 } from '@angular/fire/firestore';
+import {Channel} from '../types/channel';
 
 @Injectable({
   providedIn: 'root'
@@ -65,10 +66,20 @@ export class DatabaseService {
     );
   }
 
-
   async retrieveMessageInRealTime(channel: string, id: string, observer: ((messages: Message) => void)): Promise<void> {
   }
 
+  async getPublicChannelListInRealTime(observer: ((channels: Channel[]) => void)): Promise<void> {
+    const handleChange = (change) => observer(change.docs.map(d => ({...d.data(), key: d.id})));
+
+    onSnapshot<Channel>(
+      query<Channel>(
+        this.getCollectionRef<Channel>('Channels'),
+        orderBy('name')
+      ),
+      handleChange
+    );
+  }
 
   async deleteMessage(channel: string, id: string): Promise<void> {
   }

@@ -2,7 +2,9 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {DatabaseService} from '../services/database.service';
 
 import {Message} from '../types/message';
+import {Channel} from '../types/channel';
 import {IonContent} from '@ionic/angular';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-channel',
@@ -18,10 +20,8 @@ export class ChannelPage implements OnInit {
   private floatLeft = true;
   private prevUser: string;
 
-  constructor(private dbService: DatabaseService) {
-    // this.dbService.retrieveMessagesAsSnapshot(this.channelName)
-    //   .then(msg => this.messages = msg)
-    this.dbService.retrieveMessagesInRealTime(this.channelName, (messages) => this.messages = messages)
+  constructor(private dbService: DatabaseService, public activatedRoute: ActivatedRoute) {
+    //this.dbService.retrieveMessagesInRealTime(this.channelName, (messages) => this.messages = messages);
   }
 
   sendMessage(): void {
@@ -52,5 +52,19 @@ export class ChannelPage implements OnInit {
   }
 
   ngOnInit() {
+    this.setData();
+    this.dbService.retrieveMessagesInRealTime(this.channelName, (messages) => this.messages = messages);
+  }
+
+  setData(): void{
+    const kanaal = this.activatedRoute.snapshot.paramMap.get('channelName');
+
+    if (kanaal===null)
+    {
+      this.channelName = 'General';
+      return;
+    }
+
+    this.channelName = kanaal;
   }
 }

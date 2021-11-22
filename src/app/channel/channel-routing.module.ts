@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ChannelPage
+  },  {
+    path: 'new-channel',
+    loadChildren: () => import('./new-channel/new-channel.module').then( m => m.NewChannelPageModule)
   }
+
 ];
 
 @NgModule({
